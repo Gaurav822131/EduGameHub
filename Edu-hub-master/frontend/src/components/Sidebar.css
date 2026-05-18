@@ -1,0 +1,577 @@
+/* =========================================
+   PREMIUM DARK GOLD THEME
+========================================= */
+
+:root[data-theme="Dark"] {
+
+  /* ===== Core Backgrounds ===== */
+  --bg-dark: #09090b;
+  --bg-secondary: #111113;
+  --bg-tertiary: #18181b;
+
+  /* ===== Premium Gold ===== */
+  --accent: #d4a017;
+  --accent-soft: #facc15;
+  --accent-hover: #eab308;
+
+  /* ===== Text ===== */
+  --text-color: #f8fafc;
+  --text-light: #ffffff;
+  --text-muted: #a1a1aa;
+  --text-secondary: #71717a;
+
+  /* ===== Glass Effect ===== */
+  --glass-bg: rgba(255,255,255,0.03);
+  --glass-bg-hover: rgba(255,255,255,0.06);
+
+  --card-bg: rgba(15,15,18,0.95);
+  --card-bg-glass: rgba(255,255,255,0.04);
+
+  --glass-border: rgba(255,255,255,0.06);
+  --card-border: rgba(255,215,120,0.12);
+
+  /* ===== Shadows ===== */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
+
+  --shadow-md: 0 6px 18px rgba(0,0,0,0.35);
+
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.45);
+
+  --shadow-xl: 0 20px 50px rgba(0,0,0,0.55);
+
+  --shadow-gold: 0 0 25px rgba(212,160,23,0.18);
+
+  /* ===== Gradients ===== */
+  --gradient-primary:
+    linear-gradient(
+      135deg,
+      #facc15 0%,
+      #d4a017 45%,
+      #b8860b 100%
+    );
+
+  --gradient-dark:
+    linear-gradient(
+      180deg,
+      #09090b 0%,
+      #111113 100%
+    );
+
+  --gradient-danger:
+    linear-gradient(
+      135deg,
+      #dc2626,
+      #991b1b
+    );
+
+  /* ===== Sidebar ===== */
+  --color-sidebar-gradient-start: #09090b;
+  --color-sidebar-gradient-end: #141418;
+
+  --color-title: #fffbea;
+  --color-text-primary: var(--text-color);
+
+  --color-link-hover-bg:
+    rgba(212,160,23,0.08);
+
+  --color-link-hover-shadow:
+    rgba(212,160,23,0.15);
+
+  --color-sidebar-shadow:
+    rgba(0,0,0,0.7);
+
+  /* ===== Buttons ===== */
+  --color-toggle-bg:
+    rgba(15,15,18,0.95);
+
+  --color-toggle-hover-bg:
+    rgba(212,160,23,0.12);
+
+  --color-toggle-text: #fff;
+
+  --color-toggle-shadow:
+    rgba(0,0,0,0.35);
+
+  /* ===== Logout ===== */
+  --color-logout-bg: #991b1b;
+  --color-logout-hover-bg: #b91c1c;
+  --color-logout-text: #fff;
+
+  /* ===== Radius ===== */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  /* ===== Spacing ===== */
+  --space-xs: 0.35rem;
+  --space-sm: 0.6rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* ===== Animation ===== */
+  --transition-normal:
+    0.3s cubic-bezier(0.4,0,0.2,1);
+
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(212,160,23,0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(250,204,21,0.04),
+      transparent 30%
+    ),
+    var(--bg-dark);
+
+  color: var(--text-color);
+
+  font-family:
+    Inter,
+    system-ui,
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+/* =========================================
+   PREMIUM SIDEBAR
+========================================= */
+
+.sidebar {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 290px;
+  height: 100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(14,14,16,0.98),
+      rgba(10,10,12,0.98)
+    );
+
+  border-right:
+    1px solid var(--glass-border);
+
+  backdrop-filter: blur(22px);
+
+  padding: 1.6rem;
+
+  overflow-y: auto;
+
+  z-index: 1000;
+
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.02),
+    0 20px 50px rgba(0,0,0,0.5);
+
+  transition:
+    transform 0.35s ease,
+    width 0.3s ease;
+}
+
+/* GOLD GLOW */
+
+.sidebar::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: var(--gradient-primary);
+
+  opacity: 0.5;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.sidebar-header {
+
+  padding-bottom: 1.6rem;
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.05);
+
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-title {
+
+  font-size: 1.7rem;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+
+  background: var(--gradient-primary);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 0.4rem;
+}
+
+.user-info {
+
+  margin-top: 1rem;
+
+  padding: 1rem;
+
+  background: rgba(255,255,255,0.025);
+
+  border:
+    1px solid rgba(255,255,255,0.04);
+
+  border-radius: 18px;
+
+  backdrop-filter: blur(14px);
+}
+
+.user-name {
+
+  font-weight: 600;
+  font-size: 1rem;
+
+  color: var(--text-light);
+
+  margin-bottom: 0.3rem;
+}
+
+.user-role {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  padding: 0.45rem 0.85rem;
+
+  border-radius: 999px;
+
+  background:
+    rgba(212,160,23,0.12);
+
+  color: var(--accent-soft);
+
+  font-size: 0.82rem;
+
+  border:
+    1px solid rgba(212,160,23,0.18);
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.sidebar-nav {
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar a {
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 0.95rem 1rem;
+
+  text-decoration: none;
+
+  color: var(--text-muted);
+
+  border-radius: 16px;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: all var(--transition-normal);
+
+  overflow: hidden;
+}
+
+/* LEFT ACTIVE BAR */
+
+.sidebar a::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    scaleY(0);
+
+  width: 3px;
+  height: 65%;
+
+  border-radius: 20px;
+
+  background: var(--gradient-primary);
+
+  transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+
+  background:
+    rgba(255,255,255,0.035);
+
+  color: var(--text-light);
+
+  transform: translateX(5px);
+
+  border:
+    1px solid rgba(255,255,255,0.04);
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,0.25);
+}
+
+.sidebar a:hover::after {
+
+  transform:
+    translateY(-50%)
+    scaleY(1);
+}
+
+/* ACTIVE LINK */
+
+.sidebar a.active {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(212,160,23,0.16),
+      rgba(212,160,23,0.05)
+    );
+
+  color: #fff;
+
+  border:
+    1px solid rgba(212,160,23,0.15);
+
+  box-shadow:
+    0 0 20px rgba(212,160,23,0.08);
+}
+
+.sidebar a.active::after {
+
+  transform:
+    translateY(-50%)
+    scaleY(1);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.sidebar button:not(.logout-btn) {
+
+  width: 100%;
+
+  padding: 0.9rem 1rem;
+
+  border-radius: 16px;
+
+  border:
+    1px solid rgba(255,255,255,0.05);
+
+  background:
+    rgba(255,255,255,0.03);
+
+  color: var(--text-light);
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.sidebar button:not(.logout-btn):hover {
+
+  background:
+    rgba(212,160,23,0.1);
+
+  border-color:
+    rgba(212,160,23,0.18);
+
+  transform: translateY(-2px);
+
+  box-shadow: var(--shadow-gold);
+}
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.logout-btn {
+
+  width: 100%;
+
+  margin-top: auto;
+
+  padding: 1rem;
+
+  border: none;
+
+  border-radius: 18px;
+
+  background: var(--gradient-danger);
+
+  color: white;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 10px 25px rgba(127,29,29,0.25);
+}
+
+.logout-btn:hover {
+
+  transform: translateY(-3px);
+
+  filter: brightness(1.05);
+}
+
+/* =========================================
+   TOGGLE BUTTON
+========================================= */
+
+.sidebar-toggle {
+
+  position: fixed;
+
+  top: 1rem;
+  left: 1rem;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 16px;
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  background:
+    rgba(18,18,20,0.9);
+
+  color: var(--accent-soft);
+
+  backdrop-filter: blur(16px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 1200;
+
+  transition: all 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+
+  background:
+    rgba(212,160,23,0.12);
+
+  transform: scale(1.05);
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.sidebar::-webkit-scrollbar {
+
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+
+  background:
+    linear-gradient(
+      180deg,
+      #facc15,
+      #d4a017
+    );
+
+  border-radius: 999px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+
+  background: transparent;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+
+    transform: translateX(-100%);
+
+    width: 280px;
+  }
+
+  .sidebar.open {
+
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+
+  .sidebar-toggle {
+
+    display: none;
+  }
+
+  .sidebar {
+
+    transform: translateX(0) !important;
+  }
+}

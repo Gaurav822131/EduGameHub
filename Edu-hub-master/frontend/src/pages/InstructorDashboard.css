@@ -1,0 +1,665 @@
+.admin-dashboard {
+
+    min-height: 100vh;
+
+    padding: 3rem;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(212,160,23,0.08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(250,204,21,0.04),
+            transparent 25%
+        ),
+        var(--bg-dark);
+
+    position: relative;
+
+    overflow-x: hidden;
+}
+
+.dashboard-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.dashboard-header {
+
+    margin-bottom: 3rem;
+}
+
+.dashboard-header h1 {
+
+    font-size: clamp(2.5rem,5vw,4rem);
+
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    color: var(--text-light);
+
+    margin-bottom: 0.8rem;
+}
+
+.dashboard-icon {
+
+    font-size: 3rem;
+
+    background: var(--gradient-primary);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dashboard-header h1 span:not(.dashboard-icon) {
+
+    background: var(--gradient-primary);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dashboard-subtitle {
+
+    color: var(--text-muted);
+
+    font-size: 1.05rem;
+
+    font-weight: 400;
+
+    max-width: 700px;
+
+    line-height: 1.7;
+}
+
+/* =========================================
+   STATS GRID
+========================================= */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(260px,1fr));
+
+    gap: 1.5rem;
+
+    margin-bottom: 3rem;
+}
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.stat-card {
+
+    position: relative;
+
+    padding: 2rem;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(20,20,22,0.95),
+            rgba(14,14,16,0.95)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.05);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.35);
+}
+
+.stat-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.03),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+.stat-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(212,160,23,0.2);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.45),
+        0 0 30px rgba(212,160,23,0.08);
+}
+
+/* =========================================
+   STAT CONTENT
+========================================= */
+
+.stat-icon {
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 1.5rem;
+
+    font-size: 1.8rem;
+
+    background:
+        rgba(212,160,23,0.12);
+
+    color: var(--accent-soft);
+
+    border:
+        1px solid rgba(212,160,23,0.12);
+}
+
+.stat-card h3 {
+
+    font-size: 0.95rem;
+
+    color: var(--text-muted);
+
+    font-weight: 500;
+
+    margin-bottom: 0.7rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.stat-number {
+
+    font-size: clamp(2rem,5vw,3rem);
+
+    font-weight: 800;
+
+    color: var(--text-light);
+
+    line-height: 1;
+}
+
+/* =========================================
+   USERS SECTION
+========================================= */
+
+.users-section {
+
+    margin-top: 2rem;
+}
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.users-section-header {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-bottom: 2rem;
+
+    flex-wrap: wrap;
+}
+
+.table-title {
+
+    font-size: clamp(1.7rem,4vw,2.5rem);
+
+    font-weight: 700;
+
+    color: var(--text-light);
+
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.table-title span {
+
+    color: var(--accent-soft);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.export-btn,
+.pagination-btn,
+.pagination-number,
+.sort-order-btn,
+.results-clear-filters,
+.empty-clear-filters {
+
+    border: none;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    color: var(--text-light);
+
+    border-radius: 14px;
+
+    padding: 0.85rem 1.2rem;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    border:
+        1px solid rgba(255,255,255,0.06);
+
+    backdrop-filter: blur(12px);
+}
+
+.export-btn:hover,
+.pagination-btn:hover,
+.pagination-number:hover,
+.sort-order-btn:hover,
+.results-clear-filters:hover,
+.empty-clear-filters:hover {
+
+    background:
+        rgba(212,160,23,0.12);
+
+    border-color:
+        rgba(212,160,23,0.25);
+
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.admin-search-input {
+
+    width: 100%;
+
+    padding: 1rem 1.2rem;
+
+    border-radius: 16px;
+
+    border:
+        1px solid rgba(255,255,255,0.06);
+
+    background:
+        rgba(255,255,255,0.03);
+
+    color: var(--text-light);
+
+    font-size: 0.95rem;
+
+    transition: all 0.3s ease;
+
+    backdrop-filter: blur(14px);
+}
+
+.admin-search-input:focus {
+
+    outline: none;
+
+    border-color:
+        rgba(212,160,23,0.3);
+
+    box-shadow:
+        0 0 0 4px rgba(212,160,23,0.08);
+}
+
+.admin-search-input::placeholder {
+
+    color: var(--text-muted);
+}
+
+/* =========================================
+   TABLE CONTAINER
+========================================= */
+
+.table-container {
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    border:
+        1px solid rgba(255,255,255,0.06);
+
+    background:
+        rgba(18,18,20,0.92);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-container table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.table-container thead {
+
+    background:
+        rgba(255,255,255,0.03);
+}
+
+.table-container th {
+
+    padding: 1.3rem 1.5rem;
+
+    text-align: left;
+
+    color: var(--text-muted);
+
+    font-size: 0.8rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.06);
+}
+
+.table-container td {
+
+    padding: 1.3rem 1.5rem;
+
+    color: var(--text-light);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.04);
+
+    font-size: 0.94rem;
+}
+
+.table-container tbody tr {
+
+    transition:
+        background 0.25s ease;
+}
+
+.table-container tbody tr:hover {
+
+    background:
+        rgba(255,255,255,0.025);
+}
+
+/* =========================================
+   ROLE BADGES
+========================================= */
+
+.role-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.45rem 0.9rem;
+
+    border-radius: 999px;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+.role-badge.user {
+
+    background:
+        rgba(59,130,246,0.12);
+
+    color: #93c5fd;
+}
+
+.role-badge.premium {
+
+    background:
+        rgba(212,160,23,0.12);
+
+    color: #facc15;
+}
+
+.role-badge.admin {
+
+    background:
+        rgba(239,68,68,0.12);
+
+    color: #fca5a5;
+}
+
+/* =========================================
+   RESULTS INFO
+========================================= */
+
+.results-info,
+.pagination-info {
+
+    margin-top: 1rem;
+
+    padding: 1rem 1.2rem;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.03);
+
+    border:
+        1px solid rgba(255,255,255,0.05);
+
+    color: var(--text-muted);
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.admin-empty-state {
+
+    padding: 4rem 2rem;
+
+    text-align: center;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255,255,255,0.03);
+
+    border:
+        1px solid rgba(255,255,255,0.05);
+}
+
+.empty-icon {
+
+    font-size: 4rem;
+
+    margin-bottom: 1rem;
+
+    color: var(--accent-soft);
+}
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.admin-pagination {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 0.7rem;
+
+    margin-top: 2rem;
+
+    flex-wrap: wrap;
+}
+
+.pagination-number.active {
+
+    background:
+        rgba(212,160,23,0.18);
+
+    border-color:
+        rgba(212,160,23,0.35);
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.table-container::-webkit-scrollbar {
+
+    width: 8px;
+    height: 8px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(212,160,23,0.35);
+
+    border-radius: 999px;
+}
+
+.table-container::-webkit-scrollbar-track {
+
+    background: transparent;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .admin-dashboard {
+
+        padding: 1.5rem 1rem;
+    }
+
+    .dashboard-header h1 {
+
+        font-size: 2.2rem;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .stats {
+
+        grid-template-columns: 1fr;
+    }
+
+    .table-container {
+
+        overflow-x: auto;
+    }
+
+    .table-container table {
+
+        min-width: 700px;
+    }
+
+    .table-container th,
+    .table-container td {
+
+        padding: 1rem;
+    }
+
+    .users-section-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .stat-card {
+
+        padding: 1.5rem;
+    }
+
+    .stat-number {
+
+        font-size: 2rem;
+    }
+
+    .dashboard-header h1 {
+
+        font-size: 1.8rem;
+    }
+
+    .table-title {
+
+        font-size: 1.4rem;
+    }
+}
