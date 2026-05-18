@@ -834,7 +834,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 - **Live Demo**: [edu-gamehub.vercel.app](https://edu-gamehub.vercel.app)
 - **GitHub Issues**: [Report a bug](https://github.com/Gaurav822131/EduGameHub/issues)
-- **Email**: support@edugamehub.com
+- **Email**: gaurav822131@gmail.com
 
 ---
 
@@ -855,6 +855,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **⭐ Star this repository if you find it helpful!**
 
-Made with ❤️ by the EduGameHub Team
+Made with ❤️ by Gaurav Thakur
 
 </div>
